@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title>Cnruofficial.online — Перенаправление</title>
-    <meta name="description" content="Cnruofficial.online — это платформа для русскоязычных зрителей, предлагающая удобный доступ к фильмам и сериалам. Мы стремимся создать пространство, где каждый найдёт интересный контент для просмотра.">
-    <link rel="canonical" href="https://www.cnruofficial.online/">
+RewriteEngine On
 
-    <script>
-      // Ждём полной загрузки, чтобы гарантировать правильный редирект с якорем
-      window.onload = function () {
-        const newUrl = 'https://www.cnruofficial.online' + window.location.pathname + window.location.search + window.location.hash;
-        window.location.replace(newUrl);
-      };
-    </script>
-  </head>
-  <body>
-  </body>
-</html>
+# Если зашли без www
+RewriteCond %{HTTP_HOST} ^cnruofficial\.online [NC]
+RewriteRule ^(.*)$ https://www.cnruofficial.online/$1 [L,R=301]
