@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Если зашли без www
+RewriteCond %{HTTP_HOST} ^cnruofficial\.online [NC]
+RewriteRule ^(.*)$ https://www.cnruofficial.online/$1 [L,R=301]
